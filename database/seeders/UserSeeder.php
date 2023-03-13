@@ -2,22 +2,19 @@
 
 namespace Database\Seeders;
 
+use App\Models\Usuarios;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illunate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
-        DB::table('usuarios')->insert([
-            'name'=> Str::random(8),
-            'email'=>Str::random(15) . '@gmail.com',
-            'assessment'=>Str::random(2)
-        ]);
+        Usuarios::factory(10)->create();
     }
 }
