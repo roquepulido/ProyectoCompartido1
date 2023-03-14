@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UsuariosController extends Controller
 {
@@ -12,7 +13,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        return Usuarios::all();
+        return View("Usuarios.index", ["data" => Usuarios::all()]);
     }
 
     /**
@@ -20,7 +21,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        return View("Usuarios.create");
     }
 
     /**
@@ -43,7 +44,7 @@ class UsuariosController extends Controller
      */
     public function show($id)
     {
-        return Usuarios::find($id);
+        return View("Usuarios.update", ["data" => Usuarios::find($id)]);
     }
 
     /**
