@@ -78,6 +78,12 @@ class UsuariosController extends Controller
     {
         $usuario = Usuarios::find($id);
         $usuario->delete();
-        return  $usuario;
+        return  "Borrado";
+    }
+    public function delete($id)
+    {
+        $usuario = Usuarios::find($id);
+        $usuario->delete();
+        return  "Borrado";
     }
 }
