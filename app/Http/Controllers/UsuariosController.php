@@ -36,7 +36,7 @@ class UsuariosController extends Controller
                 'assessment' => $request->assessment,
             ]
         );
-        return $usuario;
+        return "Creado";
     }
 
     /**
@@ -60,6 +60,7 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $usuario = Usuarios::find($id);
         $usuario->update(
             [
@@ -68,7 +69,7 @@ class UsuariosController extends Controller
                 'assessment' => $request->assessment,
             ]
         );
-        return $usuario;
+        return "Actualizado";
     }
 
     /**
